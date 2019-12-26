@@ -54,7 +54,6 @@ const Audio = () => {
       style={{
         margin: `0 auto`,
         minHeight: `100vh`,
-        maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
         backgroundColor: `#${airtable.records[index].fields.hexCode}`,
       }}
