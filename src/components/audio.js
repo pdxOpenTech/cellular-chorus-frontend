@@ -1,8 +1,6 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { Howl } from "howler"
-import airtable from "../content/airtable.json"
+import { useStaticQuery, graphql } from "gatsby"
 
 const defaultHowl = {
   autoplay: false,
@@ -17,18 +15,29 @@ const createHowl = src => {
   })
 }
 
-const allHowls = airtable.records.map(audio =>
-  createHowl(audio.fields.audioFile[0].url)
-)
-
 const Audio = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allFile(filter: { extension: { eq: "mp3" } }) {
+        edges {
+          node {
+            publicURL
+            name
+          }
+        }
+      }
+    }
+  `)
+
   const [index, setIndex] = useState(0)
   const [playing, setPlaying] = useState(false)
   const [track, setTrack] = useState(null)
+  const [allHowls, setAllHowls] = useState(
+    data.allFile.edges.map(file => createHowl(file.node.publicURL))
+  )
 
   const playAudio = audio => {
     try {
-      console.log("starting", audio)
       const howlObj = audio
       const howlId = howlObj.play()
       setTrack(howlId)
@@ -40,7 +49,6 @@ const Audio = () => {
 
   const stopAudio = audio => {
     try {
-      console.log("stopping", audio)
       const howlObj = audio
       howlObj.fade(howlObj.volume(), 0, 750, track)
     } catch (error) {
@@ -55,7 +63,7 @@ const Audio = () => {
         margin: `0 auto`,
         minHeight: `100vh`,
         padding: `1.45rem 1.0875rem`,
-        backgroundColor: `#${airtable.records[index].fields.hexCode}`,
+        backgroundColor: `#${data.allFile.edges[index].node.name}`,
       }}
     >
       <button
@@ -69,7 +77,7 @@ const Audio = () => {
       <button
         onClick={() => {
           const nextIndex =
-            index + 1 === airtable.records.length ? 0 : index + 1
+            index + 1 === data.allFile.edges.length ? 0 : index + 1
           playing && stopAudio(allHowls[index])
           playing && playAudio(allHowls[nextIndex])
           setIndex(nextIndex)
