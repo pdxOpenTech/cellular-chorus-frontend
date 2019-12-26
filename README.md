@@ -11,4 +11,4 @@ gatbsy develop
 ```
 
 ## Audio files
-This project is set up to use mp3 audio files named with the hex codes of the associated color. These files are stored in the `src/audio` directory.
+This project is set up to use mp3 audio files named with the hex codes of the associated color (e.g. `ffffff.mp3`). These files are stored in the `src/audio` directory.
