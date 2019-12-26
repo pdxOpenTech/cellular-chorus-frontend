@@ -1,0 +1,89 @@
+{
+  "records": [
+    {
+      "id": "rec6FXVrAOpkBCsiI",
+      "fields": {
+        "Name": "d",
+        "audioFile": [
+          {
+            "id": "attpTUXVDcknv4P8u",
+            "url": "https://dl.airtable.com/.attachments/d93826342bd8081c95838079acbc1d83/bc4254fd/Vektroid-VektroidTextureMaps-04ThatWay-EGrade.mp3",
+            "filename": "Vektroid - Vektroid Texture Maps - 04 That Way - E Grade.mp3",
+            "size": 5891545,
+            "type": "audio/mp3"
+          }
+        ],
+        "hexCode": "3e5a63"
+      },
+      "createdTime": "2019-12-26T06:12:54.000Z"
+    },
+    {
+      "id": "recJbqbo9n33K7Tmx",
+      "fields": {
+        "Name": "a",
+        "audioFile": [
+          {
+            "id": "att63V8LvXFVCaMef",
+            "url": "https://dl.airtable.com/.attachments/fec17682d7a0ce75658f0c2f086795e2/cabc31f0/Vektroid-VektroidTextureMaps-01M.M.D.A.mp3",
+            "filename": "Vektroid - Vektroid Texture Maps - 01 M.M.D.A.mp3",
+            "size": 4559355,
+            "type": "audio/mp3"
+          }
+        ],
+        "hexCode": "e4cc53"
+      },
+      "createdTime": "2019-12-26T06:02:01.000Z"
+    },
+    {
+      "id": "recN2NME6nAYElZRu",
+      "fields": {
+        "Name": "e",
+        "audioFile": [
+          {
+            "id": "attiSAgD8VWmZM7FI",
+            "url": "https://dl.airtable.com/.attachments/cb01e610adfd2340276ad3f8cfcf6b57/382f075c/Vektroid-VektroidTextureMaps-05SecretPathway.mp3",
+            "filename": "Vektroid - Vektroid Texture Maps - 05 Secret Pathway.mp3",
+            "size": 2521283,
+            "type": "audio/mp3"
+          }
+        ],
+        "hexCode": "070406"
+      },
+      "createdTime": "2019-12-26T06:13:41.000Z"
+    },
+    {
+      "id": "recjMqsLI52Baeu7W",
+      "fields": {
+        "Name": "b",
+        "audioFile": [
+          {
+            "id": "attJbZd95xCRJB7A4",
+            "url": "https://dl.airtable.com/.attachments/f51e51aa4e0fd7f3a494a278cd0cbc18/5f809a91/Vektroid-VektroidTextureMaps-02LoveUBetter.mp3",
+            "filename": "Vektroid - Vektroid Texture Maps - 02 Love U Better.mp3",
+            "size": 6076519,
+            "type": "audio/mp3"
+          }
+        ],
+        "hexCode": "a60007"
+      },
+      "createdTime": "2019-12-26T06:02:01.000Z"
+    },
+    {
+      "id": "reckmV7206NmJxMZW",
+      "fields": {
+        "Name": "c",
+        "audioFile": [
+          {
+            "id": "attnJqLzOZZVlPrzU",
+            "url": "https://dl.airtable.com/.attachments/cb29cb1750a8d2305685b04ba3e9bb36/d005b727/Vektroid-VektroidTextureMaps-03ComeTrue.mp3",
+            "filename": "Vektroid - Vektroid Texture Maps - 03 Come True.mp3",
+            "size": 5352469,
+            "type": "audio/mp3"
+          }
+        ],
+        "hexCode": "3d4992"
+      },
+      "createdTime": "2019-12-26T06:02:01.000Z"
+    }
+  ]
+}
