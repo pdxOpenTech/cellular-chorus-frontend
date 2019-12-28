@@ -10,7 +10,7 @@ OR
 git clone https://github.com/jaronheard/cellular-chorus-frontend.git
 
 cd cellular-chorus-frontend
-gatbsy develop
+gatsby develop
 ```
 
 ## Audio files
