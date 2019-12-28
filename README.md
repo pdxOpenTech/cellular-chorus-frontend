@@ -6,6 +6,9 @@ This project uses Gatsby. To set up your developer environment for Gatsby, follo
 Once your developer environment is set up:
 ```
 git clone git@github.com:jaronheard/cellular-chorus-frontend.git
+OR
+git clone https://github.com/jaronheard/cellular-chorus-frontend.git
+
 cd cellular-chorus-frontend
 gatbsy develop
 ```
