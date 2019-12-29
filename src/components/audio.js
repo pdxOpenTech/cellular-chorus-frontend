@@ -14,7 +14,25 @@ const createHowl = src => {
     src: src,
   })
 }
-
+const buttonStyle = {
+  fontFamily: `'Roboto Condensed', sans-serif`,
+  width: `170px`,
+  paddingTop: `30px`,
+  paddingBottom: `30px`,
+  textAlign: `center`,
+  color: `#000`,
+  textTransform: `uppercase`,
+  fontWeight: `600`,
+  marginLeft: `30px`,
+  marginBottom: `30px`,
+  cursor: `pointer`,
+  display: `inline-block`,
+  backgroundColor: `transparent`,
+  border: `3px solid #000000`,
+  borderRadius: `50px`,
+  transition: `all .15s ease-in-out`,
+  color: `#000000`,
+}
 const Audio = () => {
   const data = useStaticQuery(graphql`
     {
@@ -66,7 +84,8 @@ const Audio = () => {
         backgroundColor: `#${data.allFile.edges[index].node.name}`,
       }}
     >
-      <button
+      <button style = {buttonStyle} >info</button>
+      <button style = {buttonStyle} 
         onClick={() => {
           playing ? stopAudio(allHowls[index]) : playAudio(allHowls[index])
           setPlaying(!playing)
@@ -74,7 +93,7 @@ const Audio = () => {
       >
         {playing ? "Stop" : "Play"}
       </button>
-      <button
+      <button style = {buttonStyle} 
         onClick={() => {
           const nextIndex =
             index + 1 === data.allFile.edges.length ? 0 : index + 1
@@ -85,6 +104,7 @@ const Audio = () => {
       >
         Next
       </button>
+      
     </div>
   )
 }
