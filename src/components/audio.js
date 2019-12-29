@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Howl } from "howler"
 import { useStaticQuery, graphql } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const defaultHowl = {
   autoplay: false,
@@ -84,8 +85,11 @@ const Audio = () => {
         backgroundColor: `#${data.allFile.edges[index].node.name}`,
       }}
     >
-      <button style = {buttonStyle} >info</button>
-      <button style = {buttonStyle} 
+      <AniLink fade to="info">
+        <button style={buttonStyle}>info</button>
+      </AniLink>
+      <button
+        style={buttonStyle}
         onClick={() => {
           playing ? stopAudio(allHowls[index]) : playAudio(allHowls[index])
           setPlaying(!playing)
@@ -93,7 +97,8 @@ const Audio = () => {
       >
         {playing ? "Stop" : "Play"}
       </button>
-      <button style = {buttonStyle} 
+      <button
+        style={buttonStyle}
         onClick={() => {
           const nextIndex =
             index + 1 === data.allFile.edges.length ? 0 : index + 1
@@ -104,7 +109,6 @@ const Audio = () => {
       >
         Next
       </button>
-      
     </div>
   )
 }
