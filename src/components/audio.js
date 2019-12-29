@@ -21,7 +21,7 @@ const buttonStyle = {
   paddingTop: `30px`,
   paddingBottom: `30px`,
   textAlign: `center`,
-  color: `#000`,
+  color: `#000000`,
   textTransform: `uppercase`,
   fontWeight: `600`,
   marginLeft: `30px`,
@@ -32,7 +32,6 @@ const buttonStyle = {
   border: `3px solid #000000`,
   borderRadius: `50px`,
   transition: `all .15s ease-in-out`,
-  color: `#000000`,
 }
 const Audio = () => {
   const data = useStaticQuery(graphql`
@@ -51,7 +50,7 @@ const Audio = () => {
   const [index, setIndex] = useState(0)
   const [playing, setPlaying] = useState(false)
   const [track, setTrack] = useState(null)
-  const [allHowls, setAllHowls] = useState(
+  const [allHowls] = useState(
     data.allFile.edges.map(file => createHowl(file.node.publicURL))
   )
 
