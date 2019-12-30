@@ -3,6 +3,12 @@ import { Howl } from "howler"
 import { useStaticQuery, graphql } from "gatsby"
 import Info from "./info"
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
 const defaultHowl = {
   autoplay: false,
   loop: false,
@@ -15,6 +21,7 @@ const createHowl = src => {
     src: src,
   })
 }
+
 const buttonStyle = {
   fontFamily: `'Roboto Condensed', sans-serif`,
   width: `85px`,
@@ -47,13 +54,15 @@ const Audio = () => {
     }
   `)
 
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(getRandomInt(0, data.allFile.edges.length - 1))
   const [playing, setPlaying] = useState(false)
   const [track, setTrack] = useState(null)
   const [info, setInfo] = useState(false)
   const [allHowls] = useState(
     data.allFile.edges.map(file => createHowl(file.node.publicURL))
   )
+  const [randomX] = useState(data.allFile.edges.map(() => Math.random() * 100))
+  const [randomY] = useState(data.allFile.edges.map(() => Math.random() * 100))
 
   const playAudio = audio => {
     try {
@@ -82,7 +91,9 @@ const Audio = () => {
         margin: `0 auto`,
         minHeight: `100vh`,
         padding: `1.45rem 1.0875rem`,
-        backgroundColor: `#${data.allFile.edges[index].node.name}`,
+        background: `radial-gradient(circle at ${randomX[index]}% ${randomY[index]}%, #${
+          data.allFile.edges[index].node.name
+        }, #ffffff)`,
         transition: `all 1000ms ease-in-out`,
       }}
     >

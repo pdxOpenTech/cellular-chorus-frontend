@@ -24,8 +24,8 @@ const infoStyle = {
   width: `100%`,
   height: `calc(100% - 6em)`,
   zIndex: `10`,
-  padding: `1em`,
-  marginTop: `6em`,
+  padding: `2em`,
+  marginTop: `4em`,
   background: `transparent`,
 }
 
