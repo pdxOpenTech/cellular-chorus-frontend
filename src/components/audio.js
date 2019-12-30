@@ -54,7 +54,7 @@ const Audio = () => {
     }
   `)
 
-  const [index, setIndex] = useState(getRandomInt(0, data.allFile.edges.length - 1))
+  const [index, setIndex] = useState(getRandomInt(0, data.allFile.edges.length))
   const [playing, setPlaying] = useState(false)
   const [track, setTrack] = useState(null)
   const [info, setInfo] = useState(false)
