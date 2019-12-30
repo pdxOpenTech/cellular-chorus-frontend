@@ -24,7 +24,7 @@ const createHowl = src => {
 
 const buttonStyle = {
   fontFamily: `'Roboto Condensed', sans-serif`,
-  width: `85px`,
+  width: `90px`,
   paddingTop: `10px`,
   paddingBottom: `10px`,
   textAlign: `center`,
