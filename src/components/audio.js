@@ -1,6 +1,13 @@
 import React, { useState } from "react"
 import { Howl } from "howler"
 import { useStaticQuery, graphql } from "gatsby"
+import Info from "./info"
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
 
 const defaultHowl = {
   autoplay: false,
@@ -14,24 +21,24 @@ const createHowl = src => {
     src: src,
   })
 }
+
 const buttonStyle = {
   fontFamily: `'Roboto Condensed', sans-serif`,
-  width: `170px`,
-  paddingTop: `30px`,
-  paddingBottom: `30px`,
+  width: `85px`,
+  paddingTop: `10px`,
+  paddingBottom: `10px`,
   textAlign: `center`,
-  color: `#000`,
+  color: `#000000`,
   textTransform: `uppercase`,
   fontWeight: `600`,
-  marginLeft: `30px`,
-  marginBottom: `30px`,
+  marginLeft: `10px`,
+  marginBottom: `10px`,
   cursor: `pointer`,
   display: `inline-block`,
   backgroundColor: `transparent`,
   border: `3px solid #000000`,
   borderRadius: `50px`,
   transition: `all .15s ease-in-out`,
-  color: `#000000`,
 }
 const Audio = () => {
   const data = useStaticQuery(graphql`
@@ -47,12 +54,15 @@ const Audio = () => {
     }
   `)
 
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(getRandomInt(0, data.allFile.edges.length))
   const [playing, setPlaying] = useState(false)
   const [track, setTrack] = useState(null)
-  const [allHowls, setAllHowls] = useState(
+  const [info, setInfo] = useState(false)
+  const [allHowls] = useState(
     data.allFile.edges.map(file => createHowl(file.node.publicURL))
   )
+  const [randomX] = useState(data.allFile.edges.map(() => Math.random() * 100))
+  const [randomY] = useState(data.allFile.edges.map(() => Math.random() * 100))
 
   const playAudio = audio => {
     try {
@@ -68,7 +78,7 @@ const Audio = () => {
   const stopAudio = audio => {
     try {
       const howlObj = audio
-      howlObj.fade(howlObj.volume(), 0, 750, track)
+      howlObj.fade(howlObj.volume(), 0, 1000, track)
     } catch (error) {
       // eslint-disable-next-line
       console.warn("Unknown SFX theme requested to stop ")
@@ -81,30 +91,39 @@ const Audio = () => {
         margin: `0 auto`,
         minHeight: `100vh`,
         padding: `1.45rem 1.0875rem`,
-        backgroundColor: `#${data.allFile.edges[index].node.name}`,
+        background: `radial-gradient(circle at ${randomX[index]}% ${randomY[index]}%, #${
+          data.allFile.edges[index].node.name
+        }, #ffffff)`,
+        transition: `all 1000ms ease-in-out`,
       }}
     >
-      <button style = {buttonStyle} >info</button>
-      <button style = {buttonStyle} 
-        onClick={() => {
-          playing ? stopAudio(allHowls[index]) : playAudio(allHowls[index])
-          setPlaying(!playing)
-        }}
-      >
-        {playing ? "Stop" : "Play"}
-      </button>
-      <button style = {buttonStyle} 
-        onClick={() => {
-          const nextIndex =
-            index + 1 === data.allFile.edges.length ? 0 : index + 1
-          playing && stopAudio(allHowls[index])
-          playing && playAudio(allHowls[nextIndex])
-          setIndex(nextIndex)
-        }}
-      >
-        Next
-      </button>
-      
+      <Info in={info} />
+      <div style={{ margin: `0 auto`, width: `max-content` }}>
+        <button style={buttonStyle} onClick={() => setInfo(!info)}>
+          info
+        </button>
+        <button
+          style={buttonStyle}
+          onClick={() => {
+            playing ? stopAudio(allHowls[index]) : playAudio(allHowls[index])
+            setPlaying(!playing)
+          }}
+        >
+          {playing ? "Stop" : "Play"}
+        </button>
+        <button
+          style={buttonStyle}
+          onClick={() => {
+            const nextIndex =
+              index + 1 === data.allFile.edges.length ? 0 : index + 1
+            playing && stopAudio(allHowls[index])
+            playing && playAudio(allHowls[nextIndex])
+            setIndex(nextIndex)
+          }}
+        >
+          Next
+        </button>
+      </div>
     </div>
   )
 }
