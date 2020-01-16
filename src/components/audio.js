@@ -19,6 +19,7 @@ const createHowl = src => {
   return new Howl({
     ...defaultHowl,
     src: src,
+    loop: true
   })
 }
 
@@ -91,9 +92,12 @@ const Audio = () => {
         margin: `0 auto`,
         minHeight: `100vh`,
         padding: `1.45rem 1.0875rem`,
-        background: `radial-gradient(circle at ${randomX[index]}% ${randomY[index]}%, #${
-          data.allFile.edges[index].node.name
-        }, #ffffff)`,
+        background: `radial-gradient(circle at ${randomX[index]}% ${
+          randomY[index]
+        }%, #${data.allFile.edges[index].node.name.slice(
+          data.allFile.edges[index].node.name.length - 6,
+          data.allFile.edges[index].node.name.length
+        )}, #ffffff)`,
         transition: `all 1000ms ease-in-out`,
       }}
     >
