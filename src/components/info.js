@@ -51,9 +51,6 @@ const Info = ({ in: inProp }) => (
               Singapura jaguar so jaguar yet american shorthair ocelot so
               cornish rex. Siamese american shorthair and scottish fold ocelot.
             </p>
-            <p>
-              <a href="https://vektroid.bandcamp.com/album/vektroid-texture-maps">Sounds</a>
-            </p>
           </div>
         </div>
       </div>
