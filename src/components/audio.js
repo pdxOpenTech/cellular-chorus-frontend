@@ -19,6 +19,7 @@ const createHowl = src => {
   return new Howl({
     ...defaultHowl,
     src: src,
+    loop: true
   })
 }
 
