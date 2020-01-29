@@ -35,7 +35,7 @@ const Info = ({ in: inProp }) => (
       <div
         style={{
           ...defaultStyle,
-          ...transitionStyles[state],git 
+          ...transitionStyles[state],
         }}
       >
         <div style={infoStyle}>
