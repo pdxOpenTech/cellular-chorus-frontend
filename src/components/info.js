@@ -41,7 +41,7 @@ const Info = ({ in: inProp }) => (
         <div style={infoStyle}>
           <div style={{ margin: `0 auto`, maxWidth: `800px` }}>
             <p>
-            <strong>Cellular Chorus by <a href="https://soundcloud.com/patriciawolf_music">Patricia Wolf</a></strong>
+            <strong>Cellular Chorus by</strong> <a href="https://soundcloud.com/patriciawolf_music">Patricia Wolf</a>
             </p>
             <p>
             Cellular Chorus is a work of spatialized aleatoric music using 
