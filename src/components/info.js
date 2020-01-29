@@ -41,6 +41,9 @@ const Info = ({ in: inProp }) => (
         <div style={infoStyle}>
           <div style={{ margin: `0 auto`, maxWidth: `800px` }}>
             <p>
+              <strong>Cellular Chorus by <a href="https://soundcloud.com/patriciawolf_music">Patricia Wolf</strong></a>
+            </p>
+            <p>
             Cellular Chorus is a work of spatialized aleatoric music using 
             smartphones to bring people physically closer to have an 
             interactive and collective experience with music.
