@@ -24,9 +24,19 @@ const infoStyle = {
   width: `100%`,
   height: `calc(100% - 6em)`,
   zIndex: `10`,
-  padding: `2em`,
+  padding: `2em 2em 0 2em`,
   marginTop: `4em`,
   background: `transparent`,
+}
+
+const infoBox = {
+  margin: `0 auto`,
+  maxWidth: `800px`,
+  overflow: `auto`,
+  width: `100%`,
+  height: `100%`,
+  paddingRight: `17px`,
+  boxSizing: `content-box`,
 }
 
 const Info = ({ in: inProp }) => (
@@ -39,9 +49,12 @@ const Info = ({ in: inProp }) => (
         }}
       >
         <div style={infoStyle}>
-          <div style={{ margin: `0 auto`, maxWidth: `800px` }}>
+          <div style={infoBox}>
             <p>
-            <strong>Cellular Chorus by</strong> <a href="https://soundcloud.com/patriciawolf_music">Patricia Wolf</a>
+              <strong>Cellular Chorus by</strong>{" "}
+              <a href="https://soundcloud.com/patriciawolf_music">
+                Patricia Wolf
+              </a>
             </p>
             <p>
             Cellular Chorus is a work of spatialized aleatoric music using 
@@ -67,7 +80,7 @@ const Info = ({ in: inProp }) => (
             harmonize. There is no right or wrong way to play them. The intention of 
             this piece is to repurpose your smartphone for deep listening, creative 
             experimentation, and to immerse groups of people in a sound and light 
-            environment with with face to face interactions. 
+            environment with face to face interactions.
             </p>
             <p>
               Concept and sound design by Patricia Wolf.
