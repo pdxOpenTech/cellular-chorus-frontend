@@ -69,6 +69,9 @@ const Info = ({ in: inProp }) => (
             experimentation, and immersing in a sound and light environment within 
             a tangible space with real face to face interactions. 
             </p>
+            <p>
+              Concept and sound design by Patricia Wolf.
+            </p>
           </div>
         </div>
       </div>
