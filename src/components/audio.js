@@ -60,7 +60,7 @@ const trackStyle = {
   backgroundColor: `transparent`,
   border: `3px solid transparent`,
   transition: `all .15s ease-in-out`,
-  fontSize: `1.5rem`,
+  fontSize: `1.25rem`,
   verticalAlign: `top`,
 }
 
