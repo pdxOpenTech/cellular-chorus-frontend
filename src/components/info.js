@@ -85,6 +85,11 @@ const Info = ({ in: inProp }) => (
             <p>
               Concept and sound design by Patricia Wolf.
             </p>
+            <p>
+              Web design + development by{" "}
+              <a href="twitter.com/jaronheard">Jaron Heard</a>, who invites you
+              to make more collaborative work.
+            </p>
           </div>
         </div>
       </div>
