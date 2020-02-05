@@ -36,5 +36,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-transition-link`,
+    `gatsby-plugin-material-ui`,
   ],
 }
