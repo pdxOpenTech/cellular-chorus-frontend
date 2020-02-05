@@ -1,44 +1,69 @@
 import React, { useState } from "react"
 import { Howl } from "howler"
 import { useStaticQuery, graphql } from "gatsby"
-import Info from "./info"
+import {
+  PlayArrow,
+  SkipNext,
+  SkipPrevious,
+  Info,
+  Pause,
+  BlurOn,
+} from "@material-ui/icons"
+import { Grid } from "@material-ui/core"
+import InfoOverlay from "./info"
 
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min)) + min //The maximum is exclusive and the minimum is inclusive
 }
 
 const defaultHowl = {
   autoplay: false,
   loop: false,
   volume: 1,
+  preload: false,
+  pool: 40,
 }
 
 const createHowl = src => {
   return new Howl({
     ...defaultHowl,
     src: src,
-    loop: true
+    loop: true,
   })
 }
 
 const buttonStyle = {
   fontFamily: `'Roboto Condensed', sans-serif`,
-  padding: `10px 20px`,
+  padding: `10px 10px 0.4rem 10px`,
   textAlign: `center`,
   color: `#000000`,
-  textTransform: `uppercase`,
   fontWeight: `600`,
-  marginLeft: `10px`,
-  marginBottom: `10px`,
   cursor: `pointer`,
   display: `inline-block`,
   backgroundColor: `transparent`,
-  border: `3px solid #000000`,
-  borderRadius: `50px`,
+  border: `3px solid transparent`,
   transition: `all .15s ease-in-out`,
+  "&:hover": {
+    color: "blue !important",
+  },
 }
+
+const trackStyle = {
+  fontFamily: `'Roboto Condensed', sans-serif`,
+  padding: `10px 10px`,
+  textAlign: `center`,
+  color: `#000000`,
+  fontWeight: `600`,
+  display: `inline-block`,
+  backgroundColor: `transparent`,
+  border: `3px solid transparent`,
+  transition: `all .15s ease-in-out`,
+  fontSize: `1.5rem`,
+  verticalAlign: `top`,
+}
+
 const Audio = () => {
   const data = useStaticQuery(graphql`
     {
@@ -52,11 +77,13 @@ const Audio = () => {
       }
     }
   `)
+  const totalTracks = data.allFile.edges.length
 
-  const [index, setIndex] = useState(getRandomInt(0, data.allFile.edges.length))
+  const [index, setIndex] = useState(getRandomInt(0, totalTracks))
   const [playing, setPlaying] = useState(false)
   const [track, setTrack] = useState(null)
   const [info, setInfo] = useState(false)
+  const [loading, setLoading] = useState("")
   const [allHowls] = useState(
     data.allFile.edges.map(file => createHowl(file.node.publicURL))
   )
@@ -66,6 +93,10 @@ const Audio = () => {
   const playAudio = audio => {
     try {
       const howlObj = audio
+      howlObj.once("load", () => setLoading("loaded"))
+      const loadingStatus = howlObj.state()
+      if (loadingStatus !== "loaded") howlObj.load()
+      stateAudio(audio)
       const howlId = howlObj.play()
       setTrack(howlId)
     } catch (error) {
@@ -84,6 +115,17 @@ const Audio = () => {
     }
   }
 
+  const stateAudio = audio => {
+    try {
+      const howlObj = audio
+      const isLoading = howlObj.state()
+      setLoading(isLoading)
+    } catch (error) {
+      // eslint-disable-next-line
+      console.warn("Unknown SFX theme requested to stop ")
+    }
+  }
+
   return (
     <div
       style={{
@@ -96,35 +138,68 @@ const Audio = () => {
           data.allFile.edges[index].node.name.length - 6,
           data.allFile.edges[index].node.name.length
         )}, #ffffff)`,
-        transition: `all 1000ms ease-in-out`,
       }}
     >
-      <Info in={info} />
+      <InfoOverlay in={info} />
       <div style={{ margin: `0 auto`, width: `max-content` }}>
-        <button style={buttonStyle} onClick={() => setInfo(!info)}>
-          info
-        </button>
-        <button
-          style={buttonStyle}
-          onClick={() => {
-            playing ? stopAudio(allHowls[index]) : playAudio(allHowls[index])
-            setPlaying(!playing)
-          }}
-        >
-          {playing ? "Stop" : "Play"}
-        </button>
-        <button
-          style={buttonStyle}
-          onClick={() => {
-            const nextIndex =
-              index + 1 === data.allFile.edges.length ? 0 : index + 1
-            playing && stopAudio(allHowls[index])
-            playing && playAudio(allHowls[nextIndex])
-            setIndex(nextIndex)
-          }}
-        >
-          Next
-        </button>
+        <Grid container direction="row" alignItems="center" justify="center">
+          <Grid item>
+            <button style={buttonStyle} onClick={() => setInfo(!info)}>
+              <Info />
+            </button>
+          </Grid>
+          <Grid item>
+            <button
+              style={buttonStyle}
+              onClick={() => {
+                const nextIndex = index - 1 === -1 ? totalTracks - 1 : index - 1
+                playing && stopAudio(allHowls[index])
+                playing && playAudio(allHowls[nextIndex])
+                setIndex(nextIndex)
+              }}
+            >
+              <SkipPrevious />
+            </button>
+          </Grid>
+          <Grid item>
+            {" "}
+            <button
+              style={buttonStyle}
+              onClick={() => {
+                playing
+                  ? stopAudio(allHowls[index])
+                  : playAudio(allHowls[index])
+                setPlaying(!playing)
+              }}
+            >
+              {playing ? (
+                loading !== "loaded" ? (
+                  <BlurOn />
+                ) : (
+                  <Pause />
+                )
+              ) : (
+                <PlayArrow />
+              )}
+            </button>
+          </Grid>
+          <Grid item>
+            <button
+              style={buttonStyle}
+              onClick={() => {
+                const nextIndex = index + 1 === totalTracks ? 0 : index + 1
+                playing && stopAudio(allHowls[index])
+                playing && playAudio(allHowls[nextIndex])
+                setIndex(nextIndex)
+              }}
+            >
+              <SkipNext />
+            </button>
+          </Grid>
+          <Grid item>
+            <div style={trackStyle}>{`#${("0" + (index + 1)).slice(-2)}`}</div>
+          </Grid>
+        </Grid>
       </div>
     </div>
   )
