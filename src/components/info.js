@@ -87,7 +87,7 @@ const Info = ({ in: inProp }) => (
             </p>
             <p>
               Web design + development by{" "}
-              <a href="twitter.com/jaronheard">Jaron Heard</a>, who invites you
+              <a href="https://www.twitter.com/jaronheard">Jaron Heard</a>, who invites you
               to make more collaborative work.
             </p>
           </div>
