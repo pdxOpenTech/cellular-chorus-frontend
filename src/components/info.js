@@ -83,7 +83,7 @@ const Info = ({ in: inProp }) => (
             environment with face to face interactions.
             </p>
             <p>
-              Concept and sound design by Patricia Wolf.
+              Concept + sound design by Patricia Wolf.
             </p>
             <p>
               Web design + development by{" "}
