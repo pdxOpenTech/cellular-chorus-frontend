@@ -9,7 +9,7 @@ import {
   Pause,
   BlurOn,
 } from "@material-ui/icons"
-import { Grid } from "@material-ui/core"
+import { Grid, NativeSelect } from "@material-ui/core"
 import InfoOverlay from "./info"
 
 function getRandomInt(min, max) {
@@ -197,7 +197,21 @@ const Audio = () => {
             </button>
           </Grid>
           <Grid item>
-            <div style={trackStyle}>{`#${("0" + (index + 1)).slice(-2)}`}</div>
+            <NativeSelect
+              style={trackStyle}
+              value={`#${("0" + (index + 1)).slice(-2)}`}
+              onChange={event => {
+                const nextIndex = parseInt(event.target.value.slice(1)) - 1
+                playing && stopAudio(allHowls[index])
+                playing && playAudio(allHowls[nextIndex])
+                setIndex(nextIndex)
+              }}
+              disableUnderline
+            >
+              {data.allFile.edges.map((el, idx) => (
+                <option>{`#${("0" + (idx + 1)).slice(-2)}`}</option>
+              ))}
+            </NativeSelect>
           </Grid>
         </Grid>
       </div>
