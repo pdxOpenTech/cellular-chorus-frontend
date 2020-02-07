@@ -200,9 +200,12 @@ const Audio = () => {
             <NativeSelect
               style={trackStyle}
               value={`#${("0" + (index + 1)).slice(-2)}`}
-              onChange={event =>
-                setIndex(parseInt(event.target.value.slice(1)) - 1)
-              }
+              onChange={event => {
+                const nextIndex = parseInt(event.target.value.slice(1)) - 1
+                playing && stopAudio(allHowls[index])
+                playing && playAudio(allHowls[nextIndex])
+                setIndex(nextIndex)
+              }}
               disableUnderline
             >
               {data.allFile.edges.map((el, idx) => (
