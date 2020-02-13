@@ -96,7 +96,7 @@ const Info = ({ in: inProp }) => {
                 <Grid item xs={12}>
                   <h1>
                     <button
-                      style={buttonStyle}
+                      style={{ ...buttonStyle, textAlign: `left` }}
                       type="button"
                       onClick={handleOpen}
                     >
@@ -128,7 +128,7 @@ const Info = ({ in: inProp }) => {
                     }}
                   >
                     <Fade in={open} timeout={duration}>
-                      <ShareModal in={open}/>
+                      <ShareModal in={open} />
                     </Fade>
                   </Modal>
                 </Grid>
@@ -176,11 +176,13 @@ const Info = ({ in: inProp }) => {
                   <span style={linkStyle}>Patricia Wolf</span>
                 </a>
                 <br />
+                <br />
                 Web design + development by{" "}
                 <a href="https://www.twitter.com/jaronheard" target="_blank">
                   <span style={linkStyle}>Jaron Heard</span>
                 </a>
               </p>
+              <br /> <br />
             </div>
           </div>
         </div>

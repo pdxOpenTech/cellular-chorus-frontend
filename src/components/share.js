@@ -24,7 +24,7 @@ const defaultStyle = {
 }
 
 const transitionStyles = {
-  entering: { opacity: 1, backgroundColor: `white` },
+  entering: { opacity: 0, backgroundColor: `transparent` },
   entered: { opacity: 1, backgroundColor: `white` },
   exiting: { opacity: 0, backgroundColor: `transparent` },
   exited: { opacity: 0, backgroundColor: `transparent` },
@@ -34,6 +34,7 @@ const modalStyle = {
   width: `max-content`,
   height: `80vh`,
   margin: `10vh auto 0 auto`,
+  overflowX: `auto`
 }
 
 const linkStyle = {
@@ -140,7 +141,7 @@ const Share = ({ in: inProp }) => {
             </Grid>
           </Grid>
           <Grid container direction="row" alignItems="center" justify="center">
-            <img src={qr} style={{ height: `60vh` }} />
+            <img src={qr} style={{ maxHeight: `60vh`, maxWidth: `80vw` }} />
           </Grid>
         </div>
       )}
