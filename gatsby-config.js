@@ -37,5 +37,11 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
   ],
 }

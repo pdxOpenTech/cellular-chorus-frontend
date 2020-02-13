@@ -20,7 +20,6 @@ const transitionStyles = {
 }
 
 const buttonStyle = {
-  fontFamily: `'Roboto Condensed', sans-serif`,
   padding: `0`,
   textAlign: `center`,
   color: `#000000`,
@@ -36,7 +35,6 @@ const buttonStyle = {
 }
 
 const infoStyle = {
-  fontFamily: `'Roboto Condensed', sans-serif`,
   color: `#111111`,
   position: `absolute`,
   top: `0`,
@@ -100,8 +98,8 @@ const Info = ({ in: inProp }) => {
                       type="button"
                       onClick={handleOpen}
                     >
-                      <span style={linkStyle}>Cellular Chorus </span>
-                      <Share />
+                      <span style={linkStyle}>Cellular </span>
+                      <span style={{...linkStyle, whiteSpace: `nowrap`}}>Chorus <Share /></span>
                     </button>
                   </h1>
                 </Grid>

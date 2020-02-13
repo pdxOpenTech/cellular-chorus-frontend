@@ -44,7 +44,6 @@ const linkStyle = {
 }
 
 const buttonStyle = {
-  fontFamily: `'Roboto Condensed', sans-serif`,
   padding: `10px 10px 0.4rem 10px`,
   textAlign: `center`,
   color: `#000000`,
