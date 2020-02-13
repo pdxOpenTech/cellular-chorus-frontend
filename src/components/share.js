@@ -70,9 +70,7 @@ const Share = ({ in: inProp }) => {
         >
           <br />
           <Grid container direction="row" alignItems="center" justify="center">
-            <h2 id="simple-modal-title">
-              <span style={linkStyle}>#CellularChorus</span>
-            </h2>
+            <img src={qr} style={{ maxHeight: `60vh`, maxWidth: `80vw` }} />
           </Grid>
           <Grid container direction="row" alignItems="center" justify="center">
             <Grid item>
@@ -140,8 +138,11 @@ const Share = ({ in: inProp }) => {
               </CopyToClipboard>
             </Grid>
           </Grid>
+          <br />
           <Grid container direction="row" alignItems="center" justify="center">
-            <img src={qr} style={{ maxHeight: `60vh`, maxWidth: `80vw` }} />
+            <h2 id="simple-modal-title">
+              <span style={linkStyle}>#CellularChorus</span>
+            </h2>
           </Grid>
         </div>
       )}
