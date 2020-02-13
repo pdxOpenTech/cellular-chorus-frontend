@@ -6,7 +6,7 @@ import Audio from "../components/audio"
 
 const InfoPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Cellular Chorus by Patricia Wolf" />
     <Audio />
   </Layout>
 )
