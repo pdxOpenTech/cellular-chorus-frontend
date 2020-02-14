@@ -65,7 +65,7 @@ const trackStyle = {
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
-      "Avenir Next",
+      "IBM Plex Sans",
       "Helvetica Neue",
       "Segoe UI",
       "Helvetica",

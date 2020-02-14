@@ -40,7 +40,9 @@ const modalStyle = {
 const linkStyle = {
   color: `black`,
   textDecoration: `none`,
-  fontVariant: `small-caps`,
+  fontWeight: `200`,
+  letterSpacing: `0.12em`,
+  fontStyle: `italic`
 }
 
 const buttonStyle = {
@@ -140,7 +142,7 @@ const Share = ({ in: inProp }) => {
           <br />
           <Grid container direction="row" alignItems="center" justify="center">
             <h2 id="simple-modal-title">
-              <span style={linkStyle}>#CellularChorus</span>
+              <span style={linkStyle}>#cellularchorus</span>
             </h2>
           </Grid>
         </div>

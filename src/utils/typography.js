@@ -3,7 +3,7 @@ const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.666,
   headerFontFamily: [
-    "Avenir Next",
+    "IBM Plex Sans",
     "Helvetica Neue",
     "Segoe UI",
     "Helvetica",
@@ -11,12 +11,29 @@ const typography = new Typography({
     "sans-serif",
   ],
   bodyFontFamily: [
-    "Avenir Next",
+    "IBM Plex Sans",
     "Helvetica Neue",
     "Segoe UI",
     "Helvetica",
     "Arial",
     "sans-serif",
+  ],
+  googleFonts: [
+    {
+      name: "IBM Plex Sans",
+      styles: [
+        "100",
+        "200",
+        "300",
+        "100i",
+        "200i",
+        "300i",
+        "400",
+        "500",
+        "600",
+        "700",
+      ],
+    },
   ],
 })
 export default typography

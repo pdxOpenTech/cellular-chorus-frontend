@@ -23,7 +23,6 @@ const buttonStyle = {
   padding: `0`,
   textAlign: `center`,
   color: `#000000`,
-  fontWeight: `600`,
   cursor: `pointer`,
   display: `inline-block`,
   backgroundColor: `transparent`,
@@ -32,6 +31,7 @@ const buttonStyle = {
   "&:hover": {
     color: "blue !important",
   },
+  lineHeight: `0.95em`,
 }
 
 const infoStyle = {
@@ -50,7 +50,6 @@ const infoStyle = {
 const linkStyle = {
   color: `black`,
   textDecoration: `none`,
-  fontVariant: `small-caps`,
 }
 
 const infoBox = {
@@ -61,6 +60,41 @@ const infoBox = {
   height: `100%`,
   paddingRight: `17px`,
   boxSizing: `content-box`,
+  letterSpacing: `0.065rem`,
+  fontWeight: `300`,
+  fontSize: `1em`,
+  lineHeight: `1.45em`,
+  letterSpacing: `0.085rem`
+}
+
+const spacing = {
+  fontSize: `1.1em`,
+  letterSpacing: `0.28rem`,
+  fontWeight: `300`,
+}
+
+const titleStyle = {
+  fontSize: `3.5em`,
+  fontWeight: `100`,
+  fontStyle: `italic`,
+  textAlign: `left`,
+  marginBottom: `1rem`,
+  marginLeft: `-0.4rem`,
+}
+
+const titleSpacing = {
+  letterSpacing: `0.10em`,
+}
+
+const authorStyle = {
+  fontWeight: `300`,
+  fontStyle: `italic`,
+  letterSpacing: `0.1rem`,
+}
+
+const bodyStyle = {
+  fontWeight: `200`,
+  letterSpacing: `0.1rem`,
 }
 
 const Info = ({ in: inProp }) => {
@@ -92,19 +126,21 @@ const Info = ({ in: inProp }) => {
                 justify="center"
               >
                 <Grid item xs={12}>
-                  <h1>
+                  <h1 style={titleStyle}>
                     <button
                       style={{ ...buttonStyle, textAlign: `left` }}
                       type="button"
                       onClick={handleOpen}
                     >
-                      <span style={linkStyle}>Cellular </span>
-                      <span style={{...linkStyle, whiteSpace: `nowrap`}}>Chorus <Share /></span>
+                      <span style={titleSpacing}>Cellular </span>
+                      <span style={titleSpacing}>
+                        Chorus <Share />
+                      </span>
                     </button>
                   </h1>
                 </Grid>
                 <Grid item xs={12}>
-                  <h2>
+                  <h2 style={authorStyle}>
                     <a
                       href="https://soundcloud.com/patriciawolf_music"
                       style={linkStyle}

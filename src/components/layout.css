@@ -230,10 +230,12 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-weight: bold;
+  font-weight: 100;
+  font-style: italic;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
+  font-size: 3.5rem;
   line-height: 1.1;
+  letter-spacing: 0.28rem;
 }
 h2 {
   margin-left: 0;
