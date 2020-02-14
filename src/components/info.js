@@ -142,7 +142,7 @@ const Info = ({ in: inProp }) => {
                 <Grid item xs={12}>
                   <h2 style={authorStyle}>
                     <a
-                      href="https://soundcloud.com/patriciawolf_music"
+                      href="https://linktr.ee/patriciawolfmusic"
                       style={linkStyle}
                       target="_blank"
                     >
@@ -203,16 +203,13 @@ const Info = ({ in: inProp }) => {
               </p>
               <p>
                 Concept + sound design by{" "}
-                <a
-                  href="https://soundcloud.com/patriciawolf_music"
-                  target="_blank"
-                >
+                <a href="https://linktr.ee/patriciawolfmusic" target="_blank">
                   <span style={linkStyle}>Patricia Wolf</span>
                 </a>
-                <br />
+                https://linktr.ee/patriciawolfmusic
                 <br />
                 Web design + development by{" "}
-                <a href="https://www.twitter.com/jaronheard" target="_blank">
+                <a href="https://linktr.ee/jaronheard" target="_blank">
                   <span style={linkStyle}>Jaron Heard</span>
                 </a>
               </p>
