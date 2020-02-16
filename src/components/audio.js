@@ -9,7 +9,7 @@ import {
   Pause,
   BlurOn,
 } from "@material-ui/icons"
-import { Grid, NativeSelect } from "@material-ui/core"
+import { Grid, NativeSelect, createMuiTheme, ThemeProvider } from "@material-ui/core"
 import InfoOverlay from "./info"
 
 function getRandomInt(min, max) {
@@ -35,7 +35,6 @@ const createHowl = src => {
 }
 
 const buttonStyle = {
-  fontFamily: `'Roboto Condensed', sans-serif`,
   padding: `10px 10px 0.4rem 10px`,
   textAlign: `center`,
   color: `#000000`,
@@ -51,7 +50,6 @@ const buttonStyle = {
 }
 
 const trackStyle = {
-  fontFamily: `'Roboto Condensed', sans-serif`,
   padding: `10px 10px`,
   textAlign: `center`,
   color: `#000000`,
@@ -63,6 +61,19 @@ const trackStyle = {
   fontSize: `1.25rem`,
   verticalAlign: `top`,
 }
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      "IBM Plex Sans",
+      "Helvetica Neue",
+      "Segoe UI",
+      "Helvetica",
+      "Arial",
+      "sans-serif",
+    ].join(","),
+  },
+})
 
 const Audio = () => {
   const data = useStaticQuery(graphql`
@@ -197,21 +208,23 @@ const Audio = () => {
             </button>
           </Grid>
           <Grid item>
-            <NativeSelect
-              style={trackStyle}
-              value={`#${("0" + (index + 1)).slice(-2)}`}
-              onChange={event => {
-                const nextIndex = parseInt(event.target.value.slice(1)) - 1
-                playing && stopAudio(allHowls[index])
-                playing && playAudio(allHowls[nextIndex])
-                setIndex(nextIndex)
-              }}
-              disableUnderline
-            >
-              {data.allFile.edges.map((el, idx) => (
-                <option>{`#${("0" + (idx + 1)).slice(-2)}`}</option>
-              ))}
-            </NativeSelect>
+            <ThemeProvider theme={theme}>
+              <NativeSelect
+                style={trackStyle}
+                value={`#${("0" + (index + 1)).slice(-2)}`}
+                onChange={event => {
+                  const nextIndex = parseInt(event.target.value.slice(1)) - 1
+                  playing && stopAudio(allHowls[index])
+                  playing && playAudio(allHowls[nextIndex])
+                  setIndex(nextIndex)
+                }}
+                disableUnderline
+              >
+                {data.allFile.edges.map((el, idx) => (
+                  <option>{`#${("0" + (idx + 1)).slice(-2)}`}</option>
+                ))}
+              </NativeSelect>
+            </ThemeProvider>
           </Grid>
         </Grid>
       </div>
