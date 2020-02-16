@@ -206,7 +206,6 @@ const Info = ({ in: inProp }) => {
                 <a href="https://linktr.ee/patriciawolfmusic" target="_blank">
                   <span style={linkStyle}>Patricia Wolf</span>
                 </a>
-                https://linktr.ee/patriciawolfmusic
                 <br />
                 Web design + development by{" "}
                 <a href="https://linktr.ee/jaronheard" target="_blank">
