@@ -132,7 +132,7 @@ const Info = ({ in: inProp }) => {
                       type="button"
                       onClick={handleOpen}
                     >
-                      <span style={titleSpacing}>Cellular </span>
+                      <span style={titleSpacing}>NoiseTEch</span <span style={titleSpacing}>Cellular </span>
                       <span style={titleSpacing}>
                         Chorus <Share />
                       </span>
@@ -142,7 +142,7 @@ const Info = ({ in: inProp }) => {
                 <Grid item xs={12}>
                   <h2 style={authorStyle}>
                     <a
-                      href="https://linktr.ee/patriciawolfmusic"
+                      href="https://pdxopen.tech/noisetech"
                       style={linkStyle}
                       target="_blank"
                     >
@@ -168,17 +168,17 @@ const Info = ({ in: inProp }) => {
                 </Grid>
               </Grid>
               <p>
-                <a href="https://cellularchorus.com" target="_blank">
-                  <span style={linkStyle}>Cellular Chorus</span>
+                <a href="https://pdxopen.tech/noisetech" target="_blank">
+                  <span style={linkStyle}>NoiseTech</span>
                 </a>{" "}
-                is a work of spatialized aleatoric music using smartphones to
+                is based off of Patricia Wolf's Cellular Chorus Project - a work of spatialized aleatoric music using smartphones to
                 bring people physically closer to have an interactive and
                 collective experience with light and sound.
               </p>
               <p>
                 The piece is played by each user visiting 
-                <a href="https://cellularchorus.com" target="_blank">
-                  <span style={linkStyle}>Cellular Chorus</span>
+                <a href="noisetech.netlify.app" target="_blank">
+                  <span style={linkStyle}>NoiseTech Cellular Chorus</span>
                 </a>
                  on their smartphones. In order for the piece to play, users
                 must have “Silent Mode” turned off on their phones. Once on the
@@ -202,9 +202,13 @@ const Info = ({ in: inProp }) => {
                 interactions.
               </p>
               <p>
-                Concept + sound design by{" "}
+                Concept by{" "}
                 <a href="https://linktr.ee/patriciawolfmusic" target="_blank">
                   <span style={linkStyle}>Patricia Wolf</span>
+                </a>
+                Sound design by{" "}
+                <a href="https://pdxopen.tech/noisetech" target="_blank">
+                  <span style={linkStyle}>Noisetech Students</span>
                 </a>
                 <br />
                 Web design + development by{" "}
