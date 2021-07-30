@@ -132,7 +132,7 @@ const Info = ({ in: inProp }) => {
                       type="button"
                       onClick={handleOpen}
                     >
-                      <span style={titleSpacing}>NoiseTEch</span <span style={titleSpacing}>Cellular </span>
+                      <span style={titleSpacing}>NoiseTEch</span> <span style={titleSpacing}>Cellular </span>
                       <span style={titleSpacing}>
                         Chorus <Share />
                       </span>
