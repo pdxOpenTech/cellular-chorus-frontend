@@ -176,11 +176,8 @@ const Info = ({ in: inProp }) => {
                 collective experience with light and sound.
               </p>
               <p>
-                The piece is played by each user visiting 
-                <a href="noisetech.netlify.app" target="_blank">
-                  <span style={linkStyle}>NoiseTech Cellular Chorus</span>
-                </a>
-                 on their smartphones. In order for the piece to play, users
+                The piece is played by each user visiting this Site
+                on their smartphones. In order for the piece to play, users
                 must have “Silent Mode” turned off on their phones. Once on the
                 site, a random sound clip will be ready to be played. Each sound
                 comes with a unique color chosen by the student. 
