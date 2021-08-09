@@ -132,7 +132,7 @@ const Info = ({ in: inProp }) => {
                       type="button"
                       onClick={handleOpen}
                     >
-                      <span style={titleSpacing}>NoiseTEch</span> <span style={titleSpacing}>Cellular </span>
+                      <span style={titleSpacing}>NoiseTech</span> <span style={titleSpacing}>Cellular </span>
                       <span style={titleSpacing}>
                         Chorus <Share />
                       </span>
@@ -146,7 +146,7 @@ const Info = ({ in: inProp }) => {
                       style={linkStyle}
                       target="_blank"
                     >
-                      Patricia Wolf <OpenInNew />
+                      NoiseTech <OpenInNew />
                     </a>
                   </h2>
 
@@ -183,7 +183,7 @@ const Info = ({ in: inProp }) => {
                  on their smartphones. In order for the piece to play, users
                 must have “Silent Mode” turned off on their phones. Once on the
                 site, a random sound clip will be ready to be played. Each sound
-                comes with a unique color I have chosen to pair with the sound.
+                comes with a unique color chosen by the student. 
                 In the dark, the room will glow with the colored lights on the
                 screens. Press play to hear a sound. If you want to hear another
                 sound, press the “Next” button. The user has control of the
@@ -194,7 +194,7 @@ const Info = ({ in: inProp }) => {
                 and think about how to make this composition more interesting to
                 you with the limitations of the piece. You can explore the
                 sounds on the site or let a favorite one loop forever as the
-                others around you change unpredictably. The sounds I made are
+                others around you change unpredictably. The sounds are
                 meant to harmonize. There is no right or wrong way to play them.
                 The intention of this piece is to repurpose your smartphone for
                 deep listening, creative experimentation, and to immerse groups

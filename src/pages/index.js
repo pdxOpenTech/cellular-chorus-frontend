@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Cellular Chorus by Patricia Wolf" />
+    <SEO title="NoiseTech Cellular Chorus by NE STEAM Students" />
     <Audio />
   </Layout>
 )

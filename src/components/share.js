@@ -76,9 +76,9 @@ const Share = ({ in: inProp }) => {
           <Grid container direction="row" alignItems="center" justify="center">
             <Grid item>
               <TwitterShareButton
-                url="https://cellularchorus.com"
-                title={`Cellular Chorus by @patwolfmusic\n`}
-                hashtags={["cellularchorus"]}
+                url="https://noisetech.netlify.app"
+                title={`NoiseTech Cellular Chorus by @pdxOpenTech\n`}
+                hashtags={["noisetechcellularchorus"]}
               >
                 <TwitterIcon
                   iconFillColor="black"
@@ -88,9 +88,9 @@ const Share = ({ in: inProp }) => {
             </Grid>
             <Grid item>
               <FacebookShareButton
-                url="https://cellularchorus.com"
-                title="Cellular Chorus"
-                hashtag="#cellularchorus"
+                url="https://noisetech.netlify.app"
+                title=" NoiseTech Cellular Chorus"
+                hashtag="#noisetechcellularchorus"
               >
                 <FacebookIcon
                   iconFillColor="black"
@@ -100,9 +100,9 @@ const Share = ({ in: inProp }) => {
             </Grid>
             <Grid item>
               <TumblrShareButton
-                url="https://cellularchorus.com"
-                title="Cellular Chorus"
-                tags={["cellularchorus"]}
+                url="https://noisetech.netlify.app"
+                title="NoiseTech Cellular Chorus"
+                tags={["noisetechcellularchorus"]}
               >
                 <TumblrIcon
                   iconFillColor="black"
@@ -112,9 +112,9 @@ const Share = ({ in: inProp }) => {
             </Grid>
             <Grid item>
               <EmailShareButton
-                url="https://cellularchorus.com"
-                subject="Cellular Chorus"
-                body="Cellular Chorus by Patricia Wolf"
+                url="https://noisetech.netlify.app"
+                subject=" NoiseTech Cellular Chorus"
+                body=" NoiseTech Cellular Chorus by pdxOpenTech"
                 separator={`\n`}
               >
                 <EmailIcon
@@ -125,7 +125,7 @@ const Share = ({ in: inProp }) => {
             </Grid>
             <Grid item>
               <CopyToClipboard
-                text="https://cellularchorus.com"
+                text="https://noisetech.netlify.app"
                 title="Copy link"
                 onCopy={() => setCopied(true)}
               >
@@ -142,7 +142,7 @@ const Share = ({ in: inProp }) => {
           <br />
           <Grid container direction="row" alignItems="center" justify="center">
             <h2 id="simple-modal-title">
-              <span style={linkStyle}>#cellularchorus</span>
+              <span style={linkStyle}>#noisetechcellularchorus</span>
             </h2>
           </Grid>
         </div>
